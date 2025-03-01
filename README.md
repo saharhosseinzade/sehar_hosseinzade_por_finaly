@@ -1,1 +1,0 @@
-# sehar_hosseinzade_por_finaly
