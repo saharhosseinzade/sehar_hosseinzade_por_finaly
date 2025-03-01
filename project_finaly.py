@@ -1,5 +1,14 @@
 # sehar_hosseinzade_por_finaly
+'''
 
+APM:
+dar tabeye __str__ aslan shoma naizi b in tabe nadarid dar inja
+
+
+
+
+
+'''
 import numpy as np
 
 
@@ -157,6 +166,7 @@ class admin_panel():
           print('your device is not created')
 
       def turn_on_all_devices(self,device_type):
+          #**in doros nist, tabeye get_devices_in_groups--> yek goroh ro behesh midid na device_type ro 
           devices=self.get_devices_in_groups(device_type)
           for device in devices:
               device.turn_on()
@@ -166,6 +176,13 @@ class admin_panel():
              print('your device is not created')
          
       def turn_off_all_devices(self,device_type):
+          #Hamchenin in ham doros nist , aslan device type nemikhad
+          #shoma kafi ehame ye devie haro seda bznid
+
+          #rahnamaee baraye in tabe va tabe balaee:
+          #done done gorop haro seda bznid
+          #get_devices_in_groups ro seda bznid hame device haro add konid beham dg bad...
+          
           devices=self.get_devices_in_groups(device_type)
           for device in devices:
               device.turn_off()
@@ -176,6 +193,9 @@ class admin_panel():
          
       def get_status_in_group(self,gorup_name):
           devices=self.get_devices_in_groups(gorup_name)
+
+          #ma  tabe e bename status ndrim balke yek properti has
+          #yani bayad bznid devic.status parantez nadare
           
           for device in devices:
               s=device.status()
@@ -184,12 +204,15 @@ class admin_panel():
           else:
             print('your device is not created')
 #### ino daram rosh kar moikonam       
+    #inja kafi ebnvisdi print(keys) dg niazi nist hey brid dakhelesh....
       def displaying_groups(self):
           keys=self.groups.keys()
           print(keys) 
           for key in keys:
               values=self.groups.get(key)
               print(values)
+
+    
 #### in ja ro ham moshkel daram chon dorost namayesh nemide
       def get_status_in_device_type(self,device_type):
           for devices in self.groups.values():
